@@ -4,19 +4,25 @@ import { View, Text, Button, StyleSheet } from 'react-native'
 export default function LoginScreen(props) {
   return (
     <View style={styles.container}>
-      <Text  style={styles.text}>Login Screen</Text>
-      <Button
+      <Text style={styles.text}>Login Screen</Text>
+      <View style={styles.button}>
+      <Button 
+        style={styles.button}
         title='Go to Sign Up'
         onPress={() => {
           props.navigation.navigate('SignUp')
         }}
       />
-      <Button
+      </View>
+      <View style={styles.button}>
+      <Button 
+        style={styles.button}
         title='Go to Error'
         onPress={() => {
           props.navigation.navigate('Error')
         }}
       />
+      </View>
     </View>
   )
 }
@@ -32,4 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 20,
   },
+  button: {
+    margin: 10,
+  }
 });
